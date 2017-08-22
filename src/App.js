@@ -3,6 +3,27 @@ import SideBar from './components/sideBar';
 import MainContentArea from './components/mainContentArea';
 import './App.css';
 import WorkItems from './components/workItems';
+import WorkItemFullView from './components/workItemFullView';
+
+class ComponentsFactory {
+    create(componentName, props){
+        var resolvedComponent;
+
+        switch (componentName) {
+          case 'WorkItems':
+            resolvedComponent = (<WorkItems {...props}/> );          
+            break;  
+          case 'WorkItemFullView':
+            resolvedComponent = (<WorkItemFullView {...props}/> );
+            break;
+          default:
+            console.log('Sorry, we are out of');
+        }
+
+        // resolvedComponent.props = props;
+        return resolvedComponent;
+    }
+}
 
 
 class App extends Component {
@@ -11,27 +32,33 @@ class App extends Component {
       super(props);
 
       const initialComponentInContentArea = "WorkItems";
+      let initialProps = {}; 
+      initialProps.navigateToView = this.onNavigateRequested.bind(this);
+
       this.state = {
           currentComponentInContentArea: initialComponentInContentArea,
-          contentAreaCurrentProps : { navigateToView: this.onMenuItemSelected.bind(this) }
+          contentAreaCurrentProps : initialProps
       }
   }
 
-  onMenuItemSelected(selectedItemComponentName, selectedItemProps){
-    this.setState({currentComponentInContentArea : selectedItemComponentName, contentAreaCurrentProps: selectedItemProps});
+  onNavigateRequested(selectedItemComponentName, selectedItemProps){
+
+    // selectedItemProps.navigateToView = this.onNavigateRequested.bind(this);
+    this.setState({currentComponentInContentArea : selectedItemComponentName, 
+      contentAreaCurrentProps: selectedItemProps });// this.state.contentAreaCurrentProps.hasOwnProperty("navigateToView") ? selectedItemProps : });
   }
 
   render() {
+
+    let componentsFactory = new ComponentsFactory(); 
     return (
       <div className="App">
-          <SideBar mainMenuItems={this.state.mainMenuItems} onMenuItemSelected={this.onMenuItemSelected.bind(this)} />
+          <SideBar navigateToView={this.onNavigateRequested.bind(this)}/>
           <MainContentArea>
             {
-                React.createElement(
-                  this.state.currentComponentInContentArea,
-                  this.state.contentAreaCurrentProps
-                )
+                componentsFactory.create(this.state.currentComponentInContentArea, this.state.contentAreaCurrentProps)
             }
+            
             </MainContentArea>
       </div>
     );

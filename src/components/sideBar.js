@@ -8,7 +8,7 @@ class SideBar extends Component {
     return (
       <div className="sideBar">
           <img /*src={}*/ className="sideBar-logo" />
-          <MainMenu menuItems={this.props.mainMenuItems} onSelected={this.props.onMenuItemSelected} />
+          <MainMenu navigateToView={this.props.navigateToView} />
       </div>
     );
   }

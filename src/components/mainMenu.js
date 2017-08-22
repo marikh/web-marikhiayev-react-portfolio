@@ -23,7 +23,7 @@ class MainMenu extends Component {
                 return <MainMenuItem 
                     {...item}
                     key={item.id}
-                    onSelected={this.props.onSelected} />
+                    navigateToView={this.props.navigateToView} />
             })
         }
       </div>

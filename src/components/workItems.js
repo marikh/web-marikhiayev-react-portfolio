@@ -14,11 +14,11 @@ class WorkItems extends Component {
     }
 
     componentDidMount(){
-        fetch('../data/portfolioItems.json')
+        fetch('/data/portfolioItems.json')
         .then((response) => {
             return response.json();
         }).then((json) => {
-            this.setState({ items: {...json.data.children} });
+            this.setState({ items: json });
         })
     }
 
