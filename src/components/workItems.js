@@ -8,30 +8,39 @@ class WorkItems extends Component {
         super(props);
 
         this.state = {
-            items: [],
-            selectedWorkItemId: null
+            items: []
         }
+
+        this.fetchedData = false;
     }
 
     componentDidMount(){
+        if(this.fetchedData == true)
+            return;
+
         fetch('/data/portfolioItems.json')
         .then((response) => {
             return response.json();
         }).then((json) => {
             this.setState({ items: json });
+            this.fetchedData = true;
         })
     }
-
-  onWorkItemSelected(selectedItem){
-        this.setState({selectedWorkItemId : selectedItem.id});
-        this.props.navigateToView("WorkItemFullView", selectedItem.props);
-  }
   
+  onDeleteWorkItem(workItemId){
+    const indexOfItemToDelete =  this.state.items.map(item => item.id).indexOf(workItemId);
+    this.setState({ items: [...this.state.items.slice(0, indexOfItemToDelete), ...this.state.items.slice(indexOfItemToDelete + 1)] });
+  }
+
   render() {
     return (
       <div className="workItems">
           {
-              this.state.items.map((item) => <WorkItem {...item} onWorkItemSelected={this.onWorkItemSelected.bind(this)}/> )
+              this.state.items.map((item) => 
+              <WorkItem {...item} 
+              navigateToView={this.props.navigateToView}
+              onDeleteWorkItem={this.onDeleteWorkItem.bind(this)}
+              /> )
           }
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './sideBar.css';
 import MainMenu from './mainMenu';
+import SocialMediaMenu from './socialMediaMenu';
 
 class SideBar extends Component {
   
@@ -9,6 +10,7 @@ class SideBar extends Component {
       <div className="sideBar">
           <img /*src={}*/ className="sideBar-logo" />
           <MainMenu navigateToView={this.props.navigateToView} />
+          <SocialMediaMenu />
       </div>
     );
   }

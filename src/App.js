@@ -4,17 +4,32 @@ import MainContentArea from './components/mainContentArea';
 import './App.css';
 import WorkItems from './components/workItems';
 import WorkItemFullView from './components/workItemFullView';
+import WorkItemEditView from './components/workItemEditView';
 
 class ComponentsFactory {
+
+    constructor(){
+      this.componentsContainer = new ComponentsContainer();
+      
+    }
+
     create(componentName, props){
         var resolvedComponent;
 
         switch (componentName) {
           case 'WorkItems':
-            resolvedComponent = (<WorkItems {...props}/> );          
+            resolvedComponent = this.componentsContainer.resolve("WorkItems");
+            if(resolvedComponent == null){
+              resolvedComponent = (<WorkItems {...props}/> );
+                this.componentsContainer.register(resolvedComponent, "WorkItems");
+            }
+
             break;  
           case 'WorkItemFullView':
             resolvedComponent = (<WorkItemFullView {...props}/> );
+            break;
+          case 'WorkItemEditView':
+            resolvedComponent = (<WorkItemEditView {...props}/> );
             break;
           default:
             console.log('Sorry, we are out of');
@@ -25,11 +40,38 @@ class ComponentsFactory {
     }
 }
 
+class ComponentsContainer{
+  
+  constructor(){
+    this.componentsDictionary = {}
+  }
+
+  register(component, key, ovverideIfRegistered){
+    if(key in this.componentsDictionary){
+      return;
+    }
+
+    this.componentsDictionary[key] = component;
+  }
+
+  resolve(key){
+    if(key in this.componentsDictionary){
+      return this.componentsDictionary[key];
+    }
+
+    return null;
+  }
+}
+
 
 class App extends Component {
 
   constructor(props){
       super(props);
+
+
+      this.componentsFactory = new ComponentsFactory(); 
+      
 
       const initialComponentInContentArea = "WorkItems";
       let initialProps = {}; 
@@ -43,20 +85,19 @@ class App extends Component {
 
   onNavigateRequested(selectedItemComponentName, selectedItemProps){
 
-    // selectedItemProps.navigateToView = this.onNavigateRequested.bind(this);
     this.setState({currentComponentInContentArea : selectedItemComponentName, 
-      contentAreaCurrentProps: selectedItemProps });// this.state.contentAreaCurrentProps.hasOwnProperty("navigateToView") ? selectedItemProps : });
+      contentAreaCurrentProps: selectedItemProps });
   }
 
   render() {
 
-    let componentsFactory = new ComponentsFactory(); 
+
     return (
       <div className="App">
           <SideBar navigateToView={this.onNavigateRequested.bind(this)}/>
           <MainContentArea>
             {
-                componentsFactory.create(this.state.currentComponentInContentArea, this.state.contentAreaCurrentProps)
+                this.componentsFactory.create(this.state.currentComponentInContentArea, this.state.contentAreaCurrentProps)
             }
             
             </MainContentArea>
