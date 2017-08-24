@@ -9,22 +9,30 @@ class WorkItems extends Component {
 
         this.state = {
             items: []
-        }
-
-        this.fetchedData = false;
+        };
     }
 
-    componentDidMount(){
-        if(this.fetchedData == true)
-            return;
-
-        fetch('/data/portfolioItems.json')
+    static getInitialComponentData(){
+        return fetch('/data/portfolioItems.json')
         .then((response) => {
             return response.json();
         }).then((json) => {
-            this.setState({ items: json });
-            this.fetchedData = true;
-        })
+            return json;
+        });
+    }
+
+    componentDidMount(){
+        if(this.props.state != null)
+            this.setState({ items: this.props.state.items });
+
+        // return fetch('/data/portfolioItems.json')
+        // .then((response) => {
+        //     return response.json();
+        // }).then((json) => {
+            
+        //     this.setState({items : json});
+        //     this.props.objectDidMount({items : json});
+        // });
     }
   
   onDeleteWorkItem(workItemId){
@@ -36,7 +44,7 @@ class WorkItems extends Component {
     return (
       <div className="workItems">
           {
-              this.state.items.map((item) => 
+              this.props.state.items.map((item) => 
               <WorkItem {...item} 
               navigateToView={this.props.navigateToView}
               onDeleteWorkItem={this.onDeleteWorkItem.bind(this)}
