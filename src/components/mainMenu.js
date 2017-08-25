@@ -23,7 +23,8 @@ class MainMenu extends Component {
                 return <MainMenuItem 
                     {...item}
                     key={item.id}
-                    navigateToView={this.props.navigateToView} />
+                    navigateToView={this.props.navigateToView}
+                    stateChangeRequested={this.props.stateChangeRequested} />
             })
         }
       </div>

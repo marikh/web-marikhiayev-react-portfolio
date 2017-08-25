@@ -19,7 +19,7 @@ class ComponentsFactory {
           case ComponentNames.WorkItems:
             // resolvedComponent = this.componentsContainer.resolve(ComponentNames.WorkItems);
             // if(resolvedComponent == null){
-                resolvedComponent = (<WorkItems {...props} state={state}/> );
+                resolvedComponent = (<WorkItems {...props} data={state}/> );
                 // this.componentsContainer.register(resolvedComponent, ComponentNames.WorkItems);
             // }
             break;  

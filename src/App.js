@@ -17,23 +17,20 @@ class App extends Component {
       this.componentsFactory = new ComponentsFactory(); 
       this.componentsStateStore = new ComponentsStateStore();
 
+      this.EventHandlers = {
+        navigateToView : this.onNavigateRequested.bind(this),
+        stateChangeRequested : this.onStateChangeRequested.bind(this)
+      };
+
       const initialComponentInContentArea = ComponentNames.WorkItems;
-      let initialProps = {}; 
-      initialProps.navigateToView = this.onNavigateRequested.bind(this);
-      // initialProps.objectDidMount = this.onWorkItemsMountForTheFirstTime.bind(this);
+      const initialStateOfOfCurrentComponentInContentArea = { items: [] };
+      
       this.state = {
           currentComponentInContentArea: initialComponentInContentArea,
-          contentAreaCurrentProps : initialProps,
-          currentComponentState : { items: []}
+          contentAreaCurrentProps : {...this.EventHandlers},
+          currentComponentState : initialStateOfOfCurrentComponentInContentArea
       }
-
-
   }
-
-  // onWorkItemsMountForTheFirstTime(state){
-  //     this.componentsStateStore.store(ComponentNames.WorkItems, state);
-    
-  // }
 
   componentDidMount(){
 
@@ -53,14 +50,22 @@ class App extends Component {
        });
   }
 
+  onStateChangeRequested(componentName, newState){
+
+    this.componentsStateStore.store(componentName,newState);
+    this.setState({ currentComponentState: newState });
+  }
+
   render() {
 
     return (
       <div className="App">
-          <SideBar navigateToView={this.onNavigateRequested.bind(this)}/>
+          <SideBar {...this.EventHandlers}/>
           <MainContentArea>
             {
-                this.componentsFactory.create(this.state.currentComponentInContentArea, this.state.contentAreaCurrentProps, this.state.currentComponentState)
+                this.componentsFactory.create(this.state.currentComponentInContentArea, 
+                                                this.state.contentAreaCurrentProps, 
+                                                this.componentsStateStore.getState(this.state.currentComponentInContentArea))
             }
             
             </MainContentArea>
