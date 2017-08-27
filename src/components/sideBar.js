@@ -9,7 +9,9 @@ class SideBar extends Component {
     return (
       <div className="sideBar">
           <img /*src={}*/ className="sideBar-logo" />
-          <MainMenu navigateToView={this.props.navigateToView} stateChangeRequested={this.props.stateChangeRequested} />
+          <MainMenu navigateToView={this.props.navigateToView} 
+              stateChangeRequested={this.props.stateChangeRequested}
+              workItemsChangeRequested={this.props.workItemsChangeRequested} />
           <SocialMediaMenu />
       </div>
     );

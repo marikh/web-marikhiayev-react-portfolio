@@ -1,5 +1,6 @@
 import WorkItems from '../components/workItems';
 import WorkItemFullView from '../components/workItemFullView';
+import WorkItemAddView from '../components/workItemAddView';
 import WorkItemEditView from '../components/workItemEditView';
 import ComponentsContainer from './componentsContainer';
 import ComponentNames from './constants/componentNames';
@@ -25,6 +26,9 @@ class ComponentsFactory {
             break;  
           case 'WorkItemFullView':
             resolvedComponent = (<WorkItemFullView {...props}/> );
+            break;
+          case 'WorkItemAddView':
+            resolvedComponent = (<WorkItemAddView {...props}/> );
             break;
           case 'WorkItemEditView':
             resolvedComponent = (<WorkItemEditView {...props}/> );

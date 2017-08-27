@@ -21,12 +21,13 @@ class WorkItems extends Component {
   }
 
   render() {
-    return this.props.data && (//this.props.isShowing &&
+    return this.props.data && (
       <div className="workItems">
           {
               this.props.data.items.map((item) => 
               <WorkItem {...item} 
               navigateToView={this.props.navigateToView}
+              workItemsChangeRequested={this.props.workItemsChangeRequested}
               onDeleteWorkItem={this.onDeleteWorkItem.bind(this)}
               /> )
           }

@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import './workItemEditView.css';
+import WorkItemFormBase from './workItemFormBase';
+import ListItemChangeType from '../common/constants/listItemChangeType';
 
 class WorkItemEditView extends Component {
-  
+
+    handleSubmit(newItem){
+      this.props.workItemsChangeRequested(ListItemChangeType.Modified, newItem);
+    }
+
   render() {
-    return (
-      <div className="workItemEditView">
-          <img src={this.props.imageUrl} className="" />
-          <div>{this.props.title}</div>
-          <div>{this.props.description}</div>
-      </div>
-    );
+    return <WorkItemFormBase  id={this.props.id}
+                              title={this.props.title} 
+                              imageUrl={this.props.imageUrl}
+                              description={this.props.description}
+                              
+                              handleSubmit={this.handleSubmit.bind(this)} />;
   }
 }
 

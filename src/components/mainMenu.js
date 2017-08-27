@@ -9,8 +9,9 @@ class MainMenu extends Component {
 
       this.state = {
           menuItems: [
-              { index: 0, id: "WorkItems", title: "The Journal"},
-              { index: 1, id: "TheMan", title: "The Man"}
+              { key: 0, id: "WorkItems", title: "The Work"},
+              { key: 1, id: "WorkItemAddView", title: "Add Work"},
+              { key: 2, id: "TheMan", title: "The Man"}
               ]
       }
   }
@@ -22,9 +23,9 @@ class MainMenu extends Component {
             this.state.menuItems.map((item) => {
                 return <MainMenuItem 
                     {...item}
-                    key={item.id}
                     navigateToView={this.props.navigateToView}
-                    stateChangeRequested={this.props.stateChangeRequested} />
+                    stateChangeRequested={this.props.stateChangeRequested}
+                    workItemsChangeRequested={this.props.workItemsChangeRequested} />
             })
         }
       </div>
