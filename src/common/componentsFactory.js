@@ -2,6 +2,7 @@ import WorkItems from '../components/workItems';
 import WorkItemFullView from '../components/workItemFullView';
 import WorkItemAddView from '../components/workItemAddView';
 import WorkItemEditView from '../components/workItemEditView';
+import TheMan from '../components/theMan';
 import ComponentsContainer from './componentsContainer';
 import ComponentNames from './constants/componentNames';
 import React, { Component } from 'react';
@@ -33,8 +34,11 @@ class ComponentsFactory {
           case 'WorkItemEditView':
             resolvedComponent = (<WorkItemEditView {...props}/> );
             break;
+          case 'TheMan':
+            resolvedComponent = (<TheMan {...props}/> );
+            break;
           default:
-            console.log('Sorry, we are out of');
+            throw "Couldn't navigate to the screen called '" + componentName + "'. No component mapped to this name.";
         }
 
         // resolvedComponent.props = props;

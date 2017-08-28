@@ -70,7 +70,7 @@ class App extends Component {
       break;
       
       case ListItemChangeType.Modified:
-      let oldItem = workItemsState.items.find(workItem => workItem.key === item.key);
+      let oldItem = workItemsState.items.find(workItem => workItem.id === item.id);
       Object.assign(oldItem, item);
       break;
     }

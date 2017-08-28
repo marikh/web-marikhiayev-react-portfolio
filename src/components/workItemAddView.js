@@ -10,7 +10,12 @@ class WorkItemAddView extends Component {
     }
 
   render() {
-    return <WorkItemFormBase handleSubmit={this.handleSubmit.bind(this)} />;
+    return <WorkItemFormBase 
+        title=""
+        imageUrl=""
+        description=""
+    
+        handleSubmit={this.handleSubmit.bind(this)} />;
   }
 }
 

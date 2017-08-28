@@ -9,7 +9,7 @@ class WorkItem extends Component {
   }
 
   onWorkItemEdit(e){
-    e.stopPropagation();
+    e.stopPropagation();  // prevent from onWorkItemSelected to be called
     this.props.navigateToView("WorkItemEditView", this.props);
   }
 
