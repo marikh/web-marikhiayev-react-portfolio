@@ -1,5 +1,21 @@
-body {
+*{
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: sans-serif;
+  min-height: 100%;
+}
+
+html{
+  height: 100%;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
 }

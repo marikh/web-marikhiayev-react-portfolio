@@ -1,0 +1,16 @@
+.mainMenu{
+    font-size: 12px;
+    background-color:transparent;
+}
+
+.mainMenu .nav>li{
+    margin: 18px auto;
+}
+
+.mainMenu .nav>li:first-child{
+    margin: 0px 0px 18px 0px;
+}
+
+.mainMenu .nav>li>a{
+    padding: 0px;
+    background-color:  transparent !important;}

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './workItem.css';
+import {Button} from "react-bootstrap";
 
 class WorkItem extends Component {
-  
+
   onWorkItemSelected(e){
     e.stopPropagation();
     this.props.navigateToView("WorkItemFullView", this.props);
@@ -20,11 +21,14 @@ class WorkItem extends Component {
 
   render() {
     return (
-      <div className="" onClick={(e) => this.onWorkItemSelected(e)}>
-          <img src={this.props.imageUrl} className="" />
-          <div>{this.props.title}</div>
-          <button id="edit-button"onClick={(e) => this.onWorkItemEdit(e)}>Edit</button>
-          <button id="remove-button" onClick={(e) => this.onWorkItemDelete(e)}>Remove</button>
+      <div className="workItem" onClick={(e) => this.onWorkItemSelected(e)}>
+          <img src={this.props.imageUrl} className="workItemImage" />
+          <div className="sepereationLineAndTitle">
+            <div className="seperationLineBetweenWorkItemImageToTitle" />
+            <div className="workItemTitle">{this.props.title}</div>
+          </div>
+          <Button bsSize="xsmall" bsStyle="primary" className="workItemEditButton" id="edit-button"onClick={(e) => this.onWorkItemEdit(e)}>Edit</Button>
+          <Button bsSize="xsmall" bsStyle="danger" className="workItemDeleteButton" id="remove-button" onClick={(e) => this.onWorkItemDelete(e)}>Remove</Button>
       </div>
     );
   }

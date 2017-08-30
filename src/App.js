@@ -8,8 +8,6 @@ import ListItemChangeType from './common/constants/listItemChangeType';
 import ComponentsFactory from './common/componentsFactory';
 import ComponentsStateStore from './common/componentsStateStore';
 
-
-
 class App extends Component {
 
   constructor(props){
@@ -66,7 +64,11 @@ class App extends Component {
       
       case ListItemChangeType.New:
       const itemsKeys = workItemsState.items.map(workItem => workItem.key);
-      workItemsState.items.push({ key: Math.max(...itemsKeys) + 1, ...item});
+      const newId = Math.max(...itemsKeys) + 1;
+      let newItem = {...item};
+      newItem["id"] = newId;
+      newItem["key"] = newId;
+      workItemsState.items.push(newItem);
       break;
       
       case ListItemChangeType.Modified:
@@ -82,13 +84,12 @@ class App extends Component {
       <div className="App">
           <SideBar {...this.EventHandlers}/>
           <MainContentArea>
-            {
-                this.componentsFactory.create(this.state.currentComponentInContentArea, 
-                                                this.state.contentAreaCurrentProps, 
-                                                this.componentsStateStore.getState(this.state.currentComponentInContentArea))
-            }
-            
-            </MainContentArea>
+          {
+              this.componentsFactory.create(this.state.currentComponentInContentArea, 
+                                              this.state.contentAreaCurrentProps, 
+                                              this.componentsStateStore.getState(this.state.currentComponentInContentArea))
+          }
+          </MainContentArea>
       </div>
     );
   }

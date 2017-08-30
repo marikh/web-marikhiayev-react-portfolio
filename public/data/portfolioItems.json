@@ -3,54 +3,54 @@
         "key": 1,
         "id": "SQSP",
         "title": "SQSP",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/SQSP.png"
     },
     {
         "key": 2,
         "id": "LAPG",
         "title": "LAPG",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/LAPG.png"
     },
     {
         "key": 3,
         "id": "TWDY",
         "title": "TWDY",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/TWDY.png"
     },
     {
         "key": 4,
         "id": "NOTE",
         "title": "NOTE",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/NOTE.png"
     },
     {
         "key": 5,
         "id": "PORT",
         "title": "PORT",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/PORT.png"
     },
     {
         "key": 6,
         "id": "PRTA",
         "title": "PRTA",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/PRTA.png"
     },
     {
         "key": 7,
         "id": "SXSW",
         "title": "SXSW",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/SXSW.png"
     },
     {
         "key": 8,
         "id": "PRNT",
         "title": "PRNT",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/PRNT.png"
     },
     {
         "key": 9,
         "id": "VECT",
         "title": "VECT",
-        "imageUrl": "./images/SQSP.png"
+        "imageUrl": "/images/VECT.png"
     }
 ]

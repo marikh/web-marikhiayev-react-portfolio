@@ -1,0 +1,9 @@
+.mainMenuItemLink{
+    display: block;
+    color: rgb(233, 233, 233)
+}
+
+.activeMainMenuLink{
+    color: black; 
+    text-decoration: line-through !important;
+}

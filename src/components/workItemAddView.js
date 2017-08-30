@@ -5,7 +5,6 @@ import ListItemChangeType from '../common/constants/listItemChangeType';
 class WorkItemAddView extends Component {
 
     handleSubmit(newItem){
-      newItem["id"] = newItem["title"];
       this.props.workItemsChangeRequested(ListItemChangeType.New, newItem);
     }
 

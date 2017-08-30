@@ -6,7 +6,7 @@ class MainMenuItem extends Component {
   
   render() {
     return (
-      <div className="mainMenuItem" onClick={() => this.props.navigateToView(this.props.id, this.props)}>{this.props.title}</div>
+      <a className="mainMenuItemLink" onClick={() => this.props.navigateToView(this.props.id, this.props)}>{this.props.title}</a>
     );
   }
 }
