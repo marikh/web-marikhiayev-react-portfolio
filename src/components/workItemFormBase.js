@@ -57,6 +57,7 @@ class WorkItemFormBase extends Component {
             value={this.state.title} 
             onChange={(e) => this.handleInputChange(e)}                 
             placeholder="Put here title"
+            maxLength={4}
             required/>
 
             <input type="text" 
