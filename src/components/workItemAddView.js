@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WorkItemFormBase from './workItemFormBase';
+import WorkItemForm from './workItemForm';
 import ListItemChangeType from '../common/constants/listItemChangeType';
 
 class WorkItemAddView extends Component {
@@ -9,7 +9,7 @@ class WorkItemAddView extends Component {
     }
 
   render() {
-    return <WorkItemFormBase 
+    return <WorkItemForm 
         title=""
         imageUrl=""
         description=""

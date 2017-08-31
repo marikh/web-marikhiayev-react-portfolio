@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WorkItemFormBase from './workItemFormBase';
+import WorkItemForm from './workItemForm';
 import ListItemChangeType from '../common/constants/listItemChangeType';
 
 class WorkItemEditView extends Component {
@@ -9,7 +9,7 @@ class WorkItemEditView extends Component {
     }
 
   render() {
-    return <WorkItemFormBase  id={this.props.id}
+    return <WorkItemForm  id={this.props.id}
                               key={this.props.key}
                               title={this.props.title} 
                               imageUrl={this.props.imageUrl}

@@ -1,3 +1,7 @@
-.workItemFullView{
-  background-color:blue; width:300px; height:300px;
+.workItemFullViewImage{
+    max-width: 938px;
+}
+
+.workItemFullViewDescription{
+  margin: 10px 0px 0px 0px;
 }
