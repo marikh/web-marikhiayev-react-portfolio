@@ -11,3 +11,7 @@ color: rgb(140,140,140);
 .mainContentArea h1{
 margin-top: 0px;
 }
+
+.mainContentArea img{
+        max-width: 938px;   
+}
