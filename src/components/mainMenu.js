@@ -3,6 +3,7 @@ import './mainMenu.css';
 import MainMenuItem from './mainMenuItem';
 import {Nav, NavItem} from 'react-bootstrap'
 import lodash from 'lodash';
+import PropTypes from 'prop-types';
 
 class MainMenu extends Component {
   
@@ -51,14 +52,10 @@ class MainMenu extends Component {
   }
 }
 
+MainMenu.propTypes =  {
+    navigateToView : PropTypes.func.isRequired,
+    stateChangeRequested : PropTypes.func.isRequired,
+    workItemsChangeRequested : PropTypes.func.isRequired
+}
+
 export default MainMenu;
-                        /*<MainMenuItem 
-                        {...item}
-                        navigateToView={this.props.navigateToView}
-                        stateChangeRequested={this.props.stateChangeRequested}
-                        workItemsChangeRequested={this.props.workItemsChangeRequested} />*/
-
-
-                        // onClick={() => this.props.navigateToView(item.id, {...item, navigateToView:this.props.navigateToView,
-                        // stateChangeRequested:this.props.stateChangeRequested,
-                        // workItemsChangeRequested:this.props.workItemsChangeRequested})}>{item.title}

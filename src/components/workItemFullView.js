@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './workItemFullView.css';
+import PropTypes from 'prop-types';
 
 class WorkItemFullView extends Component {
   
@@ -12,6 +13,14 @@ class WorkItemFullView extends Component {
       </div>
     );
   }
+}
+
+
+WorkItemFullView.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  imageUrl:PropTypes.string.isRequired,
+  description:PropTypes.string
 }
 
 export default WorkItemFullView;

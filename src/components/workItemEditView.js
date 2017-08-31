@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WorkItemForm from './workItemForm';
 import ListItemChangeType from '../common/constants/listItemChangeType';
+import PropTypes from 'prop-types';
 
 class WorkItemEditView extends Component {
 
@@ -17,6 +18,15 @@ class WorkItemEditView extends Component {
                               
                               handleSubmit={this.handleSubmit.bind(this)} />;
   }
+}
+
+WorkItemEditView.propTypes = {
+  id: PropTypes.string.isRequired,
+  key: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  imageUrl:PropTypes.string.isRequired, 
+  description:PropTypes.string,
+  workItemsChangeRequested : PropTypes.func.isRequired
 }
 
 export default WorkItemEditView;

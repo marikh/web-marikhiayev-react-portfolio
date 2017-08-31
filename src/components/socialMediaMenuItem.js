@@ -6,13 +6,19 @@ class SocialMediaMenuItem extends Component {
   
   render() {
     return (
-      <img src={this.props.imageUrl} className="" />
+      <span className="socialMediaMenuItem">
+        <a href={this.props.socialMediaUrl} title={this.props.title} target="_blank">
+          <img src={this.props.socialMediaIconImageUrl} className="socialMediaMenuItemImage" />
+        </a>
+      </span>
     );
   }
 }
 
 SocialMediaMenuItem.propTypes = {
-  imageUrl: PropTypes.string.isRequired
+  socialMediaUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  socialMediaIconImageUrl : PropTypes.string.isRequired
 }
 
 export default SocialMediaMenuItem;

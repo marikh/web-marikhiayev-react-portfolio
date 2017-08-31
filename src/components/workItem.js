@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './workItem.css';
 import {Button} from "react-bootstrap";
+import PropTypes from 'prop-types';
+import ComponentNames from '../common/constants/componentNames';
 
 class WorkItem extends Component {
 
   onWorkItemSelected(e){
     e.stopPropagation();
-    this.props.navigateToView("WorkItemFullView", this.props);
+    this.props.navigateToView(ComponentNames.WorkItemFullView, this.props);
   }
 
   onWorkItemEdit(e){
-    e.stopPropagation();  // prevent from onWorkItemSelected to be called
-    this.props.navigateToView("WorkItemEditView", this.props);
+    e.stopPropagation();  // prevent bubbling (prevent calling onWorkItemSelected)
+    this.props.navigateToView(ComponentNames.WorkItemEditView, this.props);
   }
 
   onWorkItemDelete(e){
@@ -32,6 +34,16 @@ class WorkItem extends Component {
       </div>
     );
   }
+}
+
+WorkItem.propTypes =  {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  imageUrl:PropTypes.string.isRequired, 
+  description:PropTypes.string,
+  navigateToView : PropTypes.func.isRequired,
+  onDeleteWorkItem : PropTypes.func.isRequired,
+  workItemsChangeRequested : PropTypes.func.isRequired
 }
 
 export default WorkItem;

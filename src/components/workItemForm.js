@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import ListItemChangeType from '../common/constants/listItemChangeType';
 import StringExtensions from '../common/extensions/stringExtensions';
 import {Input} from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 
 class WorkItemForm extends Component {
@@ -78,6 +79,14 @@ class WorkItemForm extends Component {
       </div>
     );
   }
+}
+
+WorkItemForm.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  imageUrl:PropTypes.string.isRequired,
+  description:PropTypes.string,
+  handleSubmit : PropTypes.func.isRequired
 }
 
 export default WorkItemForm;

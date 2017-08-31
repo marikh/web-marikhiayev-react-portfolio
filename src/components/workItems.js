@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import WorkItem from './workItem';
-import ComponentsNames from '../common/constants/componentNames';
+import ComponentNames from '../common/constants/componentNames';
 import './workItems.css';
+import PropTypes from 'prop-types';
 
 class WorkItems extends Component {
 
@@ -17,7 +18,7 @@ class WorkItems extends Component {
   onDeleteWorkItem(workItemId){
 
     const indexOfItemToDelete =  this.props.data.items.map(item => item.id).indexOf(workItemId);
-    this.props.stateChangeRequested(ComponentsNames.WorkItems, { items: [...this.props.data.items.slice(0, indexOfItemToDelete), ...this.props.data.items.slice(indexOfItemToDelete + 1)] });
+    this.props.stateChangeRequested(ComponentNames.WorkItems, { items: [...this.props.data.items.slice(0, indexOfItemToDelete), ...this.props.data.items.slice(indexOfItemToDelete + 1)] });
   }
 
   render() {
@@ -34,6 +35,15 @@ class WorkItems extends Component {
       </div>
     );
   }
+}
+
+WorkItems.propTypes =  {
+    id : PropTypes.string,
+    title : PropTypes.string,
+    data : PropTypes.object.isRequired,
+    navigateToView : PropTypes.func.isRequired,
+    stateChangeRequested : PropTypes.func.isRequired,
+    workItemsChangeRequested : PropTypes.func.isRequired
 }
 
 export default WorkItems;

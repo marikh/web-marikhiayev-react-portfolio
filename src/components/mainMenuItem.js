@@ -12,7 +12,11 @@ class MainMenuItem extends Component {
 }
 
 MainMenuItem.propTypes = {
-  title: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  navigateToView : PropTypes.func.isRequired,
+  stateChangeRequested : PropTypes.func.isRequired,
+  workItemsChangeRequested : PropTypes.func.isRequired
 }
 
 export default MainMenuItem;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './socialMediaMenu.css';
 import SocialMediaMenuItem from './socialMediaMenuItem';
+import PropTypes from 'prop-types';
 
 class SocialMediaMenu extends Component {
   
@@ -8,7 +9,13 @@ class SocialMediaMenu extends Component {
       super(props);
 
       this.state = {
-          menuItems: []
+          menuItems: [
+              { key: 0, socialMediaUrl:"https://facebook.com" , socialMediaIconImageUrl: "/images/facebook.png", title: "Facebook" },
+              { key: 1, socialMediaUrl:"https://instagram.com" , socialMediaIconImageUrl: "/images/instagram.png", title: "Instagram"},
+              { key: 2, socialMediaUrl:"https://plus.google.com" , socialMediaIconImageUrl: "/images/googleplus.png", title: "Google Plus"},
+              { key: 3, socialMediaUrl:"https://pinterest.com"  , socialMediaIconImageUrl: "/images/pinterest.png", title: "Pinterest"},
+              { key: 4, socialMediaUrl:"https://twitter.com"  , socialMediaIconImageUrl: "/images/twitter.png", title: "Twitter"}
+              ]
       }
   }
 
@@ -18,8 +25,7 @@ class SocialMediaMenu extends Component {
         {
             this.state.menuItems.map((item) => {
                 return <SocialMediaMenuItem 
-                    {...item}
-                    key={item.id} />
+                    {...item} />
             })
         }
       </div>

@@ -1,0 +1,13 @@
+.socialMediaMenu{
+
+    /* makes it bottom center */
+    position: absolute;
+    width: 220px;
+    margin-left: -110px;
+    bottom: 15px;
+    left: 50%;    
+    /* makes it bottom center */
+
+    
+
+}

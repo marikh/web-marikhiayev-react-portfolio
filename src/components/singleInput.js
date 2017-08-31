@@ -9,14 +9,14 @@ const SingleInput = (props) => (
         placeholder={props.placeholder} />
 );
 
-// SingleInput.propTypes = {
-//     inputType: PropTypes.oneOf(['text', 'number']).isRequired,
-//     controlFunc: PropTypes.func.isRequired,
-//     content: PropTypes.oneOfType([
-//         PropTypes.string,
-//         PropTypes.number,
-//     ]).isRequired,
-//     placeholder: PropTypes.string,
-// };
+SingleInput.propTypes = {
+    inputType: PropTypes.oneOf(['text', 'number']).isRequired,
+    controlFunc: PropTypes.func.isRequired,
+    content: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]).isRequired,
+    placeholder: PropTypes.string,
+};
 
 export default SingleInput;
