@@ -16,6 +16,11 @@
     position: relative;
 }
 
+.workItem:hover{
+    cursor: pointer; 
+    cursor: hand; 
+}
+
 .workItemImage{
     margin: 40px 0px 0px 0px;
     max-height: 65px;
