@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './workItemForm.css';
-import classNames from 'classnames';
-import ListItemChangeType from '../common/constants/listItemChangeType';
 import StringExtensions from '../common/extensions/stringExtensions';
-import {Input} from "react-bootstrap";
 import PropTypes from 'prop-types';
 
 
@@ -45,7 +42,7 @@ class WorkItemForm extends Component {
       <div className="workItemForm">
           <form onSubmit={(e) => this.handleSubmit(e)}>
             
-            <img src={this.state.imageUrl} className="workItemFormImage"/>
+            <img src={this.state.imageUrl} alt="" className="workItemFormImage"/>
             
             <div>Image URL:
             <input type="text"

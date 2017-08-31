@@ -8,7 +8,7 @@ class SocialMediaMenuItem extends Component {
     return (
       <span className="socialMediaMenuItem">
         <a href={this.props.socialMediaUrl} title={this.props.title} target="_blank">
-          <img src={this.props.socialMediaIconImageUrl} className="socialMediaMenuItemImage" />
+          <img src={this.props.socialMediaIconImageUrl} alt="" className="socialMediaMenuItemImage" />
         </a>
       </span>
     );

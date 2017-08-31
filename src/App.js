@@ -75,6 +75,9 @@ class App extends Component {
       let oldItem = workItemsState.items.find(workItem => workItem.id === item.id);
       Object.assign(oldItem, item);
       break;
+
+      default:
+      console.log("Couldn't map '" + listItemChangeType + "' to a list change action.");
     }
   }
   

@@ -4,7 +4,7 @@ import WorkItemAddView from '../components/workItemAddView';
 import WorkItemEditView from '../components/workItemEditView';
 import TheMan from '../components/theMan';
 import ComponentNames from './constants/componentNames';
-import React, { Component } from 'react';
+import React from 'react';
 
 
 class ComponentsFactory {
@@ -29,7 +29,7 @@ class ComponentsFactory {
             resolvedComponent = (<TheMan {...props}/> );
             break;
           default:
-            throw "Couldn't navigate to the screen called '" + componentName + "'. No component mapped to this name.";
+            throw new Error("Couldn't navigate to the screen called '" + componentName + "'. No component mapped to this name.");
         }
 
         return resolvedComponent;

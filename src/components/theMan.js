@@ -20,11 +20,11 @@ In most appearances, Ace usually wears an unbuttoned Aloha shirt over a plain wh
 with red and black striped trousers and black biker boots. He lives in an apartment alongside many different animals, 
 all of whom hide from his landlord, Mr. Schickadance (Mark Margolis), in his absence and whom he owes money for rent.</div>
 
-          <img src="https://tahtienjatkosota.files.wordpress.com/2017/06/aceventura.jpg" />
-          <img src="https://media.baselineresearch.com/images/83582/83582_full.jpg" />
-          <img src="http://cdn.bloody-disgusting.com/wp-content/uploads/2015/03/Ace-Ventura-Yes.jpg" />
-          <img src="http://www.tvovermind.com/wp-content/uploads/2017/05/Ace-Ventura.jpg" />
-          <img src="https://m.popkey.co/67446d/3bld4.gif" />
+          <img src="https://tahtienjatkosota.files.wordpress.com/2017/06/aceventura.jpg" alt=""/>
+          <img src="https://media.baselineresearch.com/images/83582/83582_full.jpg" alt=""/>
+          <img src="http://cdn.bloody-disgusting.com/wp-content/uploads/2015/03/Ace-Ventura-Yes.jpg" alt=""/>
+          <img src="http://www.tvovermind.com/wp-content/uploads/2017/05/Ace-Ventura.jpg" alt=""/>
+          <img src="https://m.popkey.co/67446d/3bld4.gif" alt=""/>
       </div>
     );
   }

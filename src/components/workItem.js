@@ -24,7 +24,7 @@ class WorkItem extends Component {
   render() {
     return (
       <div className="workItem" onClick={(e) => this.onWorkItemSelected(e)}>
-          <img src={this.props.imageUrl} className="workItemImage" />
+          <img src={this.props.imageUrl} className="workItemImage" alt=""/>
           <div className="sepereationLineAndTitle">
             <div className="seperationLineBetweenWorkItemImageToTitle" />
             <div className="workItemTitle">{this.props.title}</div>

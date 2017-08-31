@@ -8,7 +8,7 @@ class WorkItemFullView extends Component {
     return (
       <div className="workItemFullView">
           <h1>{this.props.title}</h1>
-          <img src={this.props.imageUrl}/>
+          <img src={this.props.imageUrl} alt=""/>
           <div className="workItemFullViewDescription">{this.props.description}</div>
       </div>
     );

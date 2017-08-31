@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './socialMediaMenu.css';
 import SocialMediaMenuItem from './socialMediaMenuItem';
-import PropTypes from 'prop-types';
 
 class SocialMediaMenu extends Component {
   
