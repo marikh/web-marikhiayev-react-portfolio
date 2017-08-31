@@ -82,9 +82,9 @@ class WorkItemForm extends Component {
 }
 
 WorkItemForm.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  imageUrl:PropTypes.string.isRequired,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  imageUrl:PropTypes.string,
   description:PropTypes.string,
   handleSubmit : PropTypes.func.isRequired
 }

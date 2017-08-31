@@ -11,7 +11,6 @@ class WorkItemEditView extends Component {
 
   render() {
     return <WorkItemForm  id={this.props.id}
-                              key={this.props.key}
                               title={this.props.title} 
                               imageUrl={this.props.imageUrl}
                               description={this.props.description}
@@ -22,7 +21,6 @@ class WorkItemEditView extends Component {
 
 WorkItemEditView.propTypes = {
   id: PropTypes.string.isRequired,
-  key: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   imageUrl:PropTypes.string.isRequired, 
   description:PropTypes.string,

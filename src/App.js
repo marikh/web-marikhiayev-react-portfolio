@@ -66,7 +66,7 @@ class App extends Component {
       const itemsKeys = workItemsState.items.map(workItem => workItem.key);
       const newId = Math.max(...itemsKeys) + 1;
       let newItem = {...item};
-      newItem["id"] = newId;
+      newItem["id"] = newId.toString();
       newItem["key"] = newId;
       workItemsState.items.push(newItem);
       break;

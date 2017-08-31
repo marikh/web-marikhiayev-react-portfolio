@@ -40,7 +40,7 @@ class WorkItems extends Component {
 WorkItems.propTypes =  {
     id : PropTypes.string,
     title : PropTypes.string,
-    data : PropTypes.object.isRequired,
+    data : PropTypes.shape({ items: PropTypes.array }),
     navigateToView : PropTypes.func.isRequired,
     stateChangeRequested : PropTypes.func.isRequired,
     workItemsChangeRequested : PropTypes.func.isRequired
