@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './sideBar.css';
-import MainMenu from './mainMenu';
-import SocialMediaMenu from './socialMediaMenu';
+import MainMenu from '../mainMenu/mainMenu';
+import SocialMediaMenu from '../socialMediaMenu/socialMediaMenu';
 import PropTypes from 'prop-types';
 
 class SideBar extends Component {

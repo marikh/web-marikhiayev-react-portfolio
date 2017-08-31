@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './workItem.css';
 import {Button} from "react-bootstrap";
 import PropTypes from 'prop-types';
-import ComponentNames from '../common/constants/componentNames';
+import ComponentNames from '../../common/constants/componentNames';
 
 class WorkItem extends Component {
 

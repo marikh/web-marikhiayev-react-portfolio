@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import WorkItem from './workItem';
-import ComponentNames from '../common/constants/componentNames';
+import WorkItem from '../workItem/workItem';
+import ComponentNames from '../../common/constants/componentNames';
 import './workItems.css';
 import PropTypes from 'prop-types';
 

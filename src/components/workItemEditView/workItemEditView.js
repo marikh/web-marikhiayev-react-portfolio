@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import WorkItemForm from './workItemForm';
-import ListItemChangeType from '../common/constants/listItemChangeType';
+import WorkItemForm from '../workItemForm/workItemForm';
+import ListItemChangeType from '../../common/constants/listItemChangeType';
 import PropTypes from 'prop-types';
 
 class WorkItemEditView extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './socialMediaMenu.css';
-import SocialMediaMenuItem from './socialMediaMenuItem';
+import SocialMediaMenuItem from '../socialMediaMenuItem/socialMediaMenuItem';
 
 class SocialMediaMenu extends Component {
   

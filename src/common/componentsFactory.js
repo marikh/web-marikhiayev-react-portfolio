@@ -1,8 +1,8 @@
-import WorkItems from '../components/workItems';
-import WorkItemFullView from '../components/workItemFullView';
-import WorkItemAddView from '../components/workItemAddView';
-import WorkItemEditView from '../components/workItemEditView';
-import TheMan from '../components/theMan';
+import WorkItems from '../components/workItems/workItems';
+import WorkItemFullView from '../components/workItemFullView/workItemFullView';
+import WorkItemAddView from '../components/workItemAddView/workItemAddView';
+import WorkItemEditView from '../components/workItemEditView/workItemEditView';
+import TheMan from '../components/theMan/theMan';
 import ComponentNames from './constants/componentNames';
 import React from 'react';
 

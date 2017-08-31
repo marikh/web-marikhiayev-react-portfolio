@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './workItemForm.css';
-import StringExtensions from '../common/extensions/stringExtensions';
+import StringExtensions from '../../common/extensions/stringExtensions';
 import PropTypes from 'prop-types';
 
 

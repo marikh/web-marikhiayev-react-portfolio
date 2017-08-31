@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import SideBar from './components/sideBar';
-import MainContentArea from './components/mainContentArea';
+import SideBar from './components/sideBar/sideBar';
+import MainContentArea from './components/mainContentArea/mainContentArea';
 import './App.css';
-import WorkItems from './components/workItems';
+import WorkItems from './components/workItems/workItems';
 import ComponentNames from './common/constants/componentNames';
 import ListItemChangeType from './common/constants/listItemChangeType';
 import ComponentsFactory from './common/componentsFactory';

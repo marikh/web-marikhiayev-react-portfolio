@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './mainMenu.css';
-import MainMenuItem from './mainMenuItem';
+import MainMenuItem from '../mainMenuItem/mainMenuItem';
 import {Nav, NavItem} from 'react-bootstrap'
 import lodash from 'lodash';
 import PropTypes from 'prop-types';
