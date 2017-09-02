@@ -40,9 +40,7 @@ class MainMenu extends Component {
                     return <NavItem key={item.key} onSelect={this.onSelectedNavItem}>
                                 <MainMenuItem 
                                 {...item}
-                                navigateToView={this.props.navigateToView}
-                                stateChangeRequested={this.props.stateChangeRequested}
-                                workItemsChangeRequested={this.props.workItemsChangeRequested} />
+                                navigateToView={this.props.navigateToView}/>
                          </NavItem>
                 })
             }
@@ -53,9 +51,7 @@ class MainMenu extends Component {
 }
 
 MainMenu.propTypes =  {
-    navigateToView : PropTypes.func.isRequired,
-    stateChangeRequested : PropTypes.func.isRequired,
-    workItemsChangeRequested : PropTypes.func.isRequired
+    navigateToView : PropTypes.func.isRequired
 }
 
 export default MainMenu;

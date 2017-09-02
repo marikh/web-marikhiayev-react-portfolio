@@ -42,8 +42,7 @@ WorkItem.propTypes =  {
   imageUrl:PropTypes.string.isRequired, 
   description:PropTypes.string,
   navigateToView : PropTypes.func.isRequired,
-  onDeleteWorkItem : PropTypes.func.isRequired,
-  workItemsChangeRequested : PropTypes.func.isRequired
+  onDeleteWorkItem : PropTypes.func.isRequired
 }
 
 export default WorkItem;

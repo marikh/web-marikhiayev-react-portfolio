@@ -10,9 +10,7 @@ class SideBar extends Component {
     return (
       <div className="sideBar">
           <img src="/images/logo.png" alt="" className="sideBar-logo" />
-          <MainMenu navigateToView={this.props.navigateToView} 
-              stateChangeRequested={this.props.stateChangeRequested}
-              workItemsChangeRequested={this.props.workItemsChangeRequested} />
+          <MainMenu navigateToView={this.props.navigateToView}  />
           <SocialMediaMenu />
       </div>
     );
@@ -20,9 +18,7 @@ class SideBar extends Component {
 }
 
 SideBar.propTypes = {
-  navigateToView : PropTypes.func.isRequired,
-  stateChangeRequested : PropTypes.func.isRequired,
-  workItemsChangeRequested : PropTypes.func.isRequired
+  navigateToView : PropTypes.func.isRequired
 }
 
 export default SideBar;

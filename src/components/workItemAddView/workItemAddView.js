@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import WorkItemForm from '../workItemForm/workItemForm';
-import ListItemChangeType from '../../common/constants/listItemChangeType';
-import PropTypes from 'prop-types';
+import ComponentsStateStore from '../../common/componentsStateStore';
+import ComponentNames from '../../common/constants/componentNames';
 
 class WorkItemAddView extends Component {
 
     handleSubmit(newItem){
-      this.props.workItemsChangeRequested(ListItemChangeType.New, newItem);
+
+      const componentsStateStore = new ComponentsStateStore();
+      let workItemsState = componentsStateStore.getState(ComponentNames.WorkItems);
+
+      const itemsKeys = workItemsState.items.map(workItem => workItem.key);
+      const newId = Math.max(...itemsKeys) + 1;
+      newItem["id"] = newId.toString();
+      newItem["key"] = newId;
+      workItemsState.items.push(newItem);
+
+      componentsStateStore.store(ComponentNames.WorkItems, workItemsState);
     }
 
   render() {
@@ -17,10 +27,6 @@ class WorkItemAddView extends Component {
     
         handleSubmit={this.handleSubmit.bind(this)} />;
   }
-}
-
-WorkItemAddView.propTypes =  {
-  workItemsChangeRequested : PropTypes.func.isRequired
 }
 
 export default WorkItemAddView;
