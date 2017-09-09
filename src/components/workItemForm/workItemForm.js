@@ -42,11 +42,11 @@ class WorkItemForm extends Component {
                       description: this.state.description,
                       imageUrl: this.state.imageUrl});
 
-        this.setState({formSubmmited: true});
+        this.setState({formSubmmited: true, errorInSubmittingProcess: false});
       }
       catch(ex){
           console.log(ex.message);
-          this.setState({errorInSubmittingProcess: true});                
+          this.setState({errorInSubmittingProcess: true, formSubmmited: false});                
       }
     }
 
