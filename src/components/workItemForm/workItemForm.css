@@ -12,3 +12,21 @@
 
     vertical-align: top; 
 }
+
+.successfully-saved-message {
+    color: green;
+    display: none;
+}
+
+.error-saving-message {
+    color: red;
+    display: none;
+}
+
+.successfully-saved-message.saved-message-visible, .error-saving-message.error-saving-message-visible{
+    display: block;
+}
+
+.workItemForm button[type="submit"]{
+    margin: 5px 0px;
+}

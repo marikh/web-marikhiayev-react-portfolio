@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './workItemForm.css';
 import StringExtensions from '../../common/extensions/stringExtensions';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 
 
 class WorkItemForm extends Component {
@@ -13,7 +15,10 @@ class WorkItemForm extends Component {
 
         this.state = { title: !this.props.title ? "" : this.props.title,
                       description: !this.props.description ? "" : this.props.description,
-                      imageUrl: !this.props.imageUrl ? "" : this.props.imageUrl};
+                      imageUrl: !this.props.imageUrl ? "" : this.props.imageUrl,
+                    
+                      formSubmmited: false,
+                    errorInSubmittingProcess: false};
     }
   
     handleInputChange(e){
@@ -22,17 +27,27 @@ class WorkItemForm extends Component {
         const name = target.name;
         const value = StringExtensions.isNullOrWhiteSpace(target.value) ? "" : target.value;
 
-        this.setState({ [name] : value });
+        this.setState({ [name] : value, formSubmmited: false, errorInSubmittingProcess:false});
 
     }
 
     handleSubmit(e){
-        e.preventDefault();
+
+      try{
+
+        e.preventDefault();   
 
         this.props.handleSubmit({id: this.props.id,
                         title: this.state.title,
                       description: this.state.description,
                       imageUrl: this.state.imageUrl});
+
+        this.setState({formSubmmited: true});
+      }
+      catch(ex){
+          console.log(ex.message);
+          this.setState({errorInSubmittingProcess: true});                
+      }
     }
 
   render() {
@@ -71,6 +86,8 @@ class WorkItemForm extends Component {
             onChange={(e) => this.handleInputChange(e)}/>
              </div>
 
+            <div className={classNames(['successfully-saved-message', this.state.formSubmmited && 'saved-message-visible'])}>Saved successfuly</div>
+            <div className={classNames(['error-saving-message', this.state.errorInSubmittingProcess && 'error-saving-message-visible'])}>Error in saving process</div>
             <button type="submit" className="btn btn-primary">Save</button>
         </form>
       </div>
