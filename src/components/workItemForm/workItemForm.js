@@ -53,7 +53,6 @@ class WorkItemForm extends Component {
   render() {
 
     return (
-
       <div className="workItemForm">
           <form onSubmit={(e) => this.handleSubmit(e)}>
             
@@ -65,18 +64,21 @@ class WorkItemForm extends Component {
                 className="form-control"
                 value={this.state.imageUrl} 
                 onChange={(e) => this.handleInputChange(e)}
-                required/>
+                pattern=".{1,}"
+                required title="The image URL can't be empty." />
+              <span className={classNames(['input-validation-bottom-line', this.state.imageUrl.length > 0 && 'valid'])}>(The image URL can't be empty)</span>
             </div>
         
             <div>Title:
-            <input type="text" 
-                    name="title" 
-                    className="form-control"
-            value={this.state.title} 
-            onChange={(e) => this.handleInputChange(e)}
-            maxLength={4}
-            required/>
-             </div>
+              <input type="text" 
+                      name="title" 
+                      className="form-control"
+                      value={this.state.title} 
+                      onChange={(e) => this.handleInputChange(e)}
+                      pattern=".{4,4}" 
+                      required title="The title must be 4 characters."/>
+              <span className={classNames(['input-validation-bottom-line', this.state.title.length === 4 && 'valid'])}>(The title must be 4 characters)</span>
+            </div>
 
             <div>Description:
             <textarea
